@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 const {Schema} = mongoose
 const courseSchema = new Schema({
     title:{type:String,required:true},
@@ -8,6 +8,6 @@ const courseSchema = new Schema({
     category:{type:Schema.Types.ObjectId,ref:"Category",required:true},
 })
 
-const Course = mongoose.model('User',courseSchema)
+const Course = mongoose.models.Course || mongoose.model('Course',courseSchema)
 
 export default Course;
