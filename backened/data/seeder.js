@@ -21,7 +21,7 @@ const importData = async ()=>{
 
     const createdUsers = await User.insertMany(usersWithHashedPass);
     const instructorUser = createdUsers.find(user=>user.role === "instructor")
-
+ 
     // insert category data
     const categoryData = JSON.parse(fs.readFileSync(path.join(__dirname,'/data/category.json'),"utf-8"));
     const createdCategory = await Category.insertMany(categoryData);
@@ -51,5 +51,7 @@ const destroyData = ()=>{
 }
 
 // logic to add script to run seed file for different methods
+
 }
+
 
