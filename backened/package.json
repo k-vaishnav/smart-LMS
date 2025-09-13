@@ -4,7 +4,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "node --watch app.js",
+    "data:import": "node data/seeder.js",
+    "data:destroy": "node seeder.js -d"
   },
   "author": "",
   "license": "ISC",
