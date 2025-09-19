@@ -1,5 +1,5 @@
 import { useState } from "react";
-import illustration from "../assets/login-illustration.png"// your illustration
+import illustration from "../assets/login-illustration.svg"// your illustration
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -16,14 +16,14 @@ export default function Login() {
   return (
     <div className="container-fluid vh-100">
       <div className="row h-100">
-        {/* Left Illustration - hidden on small screens */}
         <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center bg-light">
           <img src={illustration} alt="Login Illustration" className="img-fluid p-4" style={{ maxHeight: "80%" }} />
         </div>
 
         {/* Right Login Form */}
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center bg-white">
-          <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "400px", borderRadius: "12px" }}>
+          <div className="card shadow-lg p-3 w-100" style={{ maxWidth: "400px", borderRadius: "12px" }}>
+        {/* Left Illustration - hidden on small screens */}
             <div className="card-body">
               <h3 className="text-center mb-4 text-primary">Smart LMS Login</h3>
 
