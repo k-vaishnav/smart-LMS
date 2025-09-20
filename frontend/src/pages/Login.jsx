@@ -1,5 +1,6 @@
 import { useState } from "react";
 import illustration from "../assets/login-illustration.svg"// your illustration
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -74,8 +75,10 @@ export default function Login() {
               {/* Signup Link */}
               <p className="text-center mt-4 mb-0">
                 Don’t have an account?{" "}
-                <a href="/register" className="text-decoration-none text-primary fw-semibold">Sign Up</a>
+                {/* <a href="/register" className="text-decoration-none text-primary fw-semibold">Sign Up</a> */}
+                 <Link to="/register" className="text-decoration-none text-primary fw-semibold">Sign Up</Link>
               </p>
+
             </div>
           </div>
         </div>
