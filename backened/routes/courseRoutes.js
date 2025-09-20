@@ -6,6 +6,6 @@ const router = express.Router();
 // get all courses
 router.get("/",getCourse);
 // get details of single course
-router.post("/:id",getCourseById);
+router.get("/:id",getCourseById);
 
 export default router;
