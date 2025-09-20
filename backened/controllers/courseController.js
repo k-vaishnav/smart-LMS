@@ -4,7 +4,8 @@ const getCourse = async (req,res) =>{
         // fetch the courses from the database
         const coures = await Course.find({})
         .populate("category",'name')
-        .populate("instructor","name,email");
+        .populate("instructor",'name email');
+        res.status(200).json(coures);
     }
     catch(error){
         res.status(500).json({message:"Server error!"})

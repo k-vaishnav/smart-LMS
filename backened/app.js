@@ -24,10 +24,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-
-
 app.listen(process.env.PORT || 3003, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
-
   connectDB();
 });
