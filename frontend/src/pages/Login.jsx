@@ -1,17 +1,23 @@
 import { useState } from "react";
 import illustration from "../assets/login-illustration.svg"// your illustration
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
+  const { login,logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Login form submitted:", form);
+    // pass login info to the auth context
+    await login(form.email, form.password);
+    navigate("/")
   };
 
   return (

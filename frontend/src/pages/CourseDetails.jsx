@@ -9,6 +9,7 @@ export default function CourseDetails() {
   const [course, setCourse] = useState(null);
 
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const studentsEnrolled = Math.floor(Math.random() * 1000) + 50;
 
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function CourseDetails() {
         setCourse(data);
       } catch (error) {
         console.error(error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -27,7 +29,7 @@ export default function CourseDetails() {
     fetchCourse();
   }, [courseid]);
 
-   if (loading) {
+  if (loading) {
     return (
       <div className="container my-5">
         <div className="row g-4">
@@ -44,7 +46,29 @@ export default function CourseDetails() {
     );
   }
 
-  if (!course) return <div className="text-center my-5">Course not found!</div>;
+ if (error || !course) {
+  return (
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{
+        minHeight: "80vh",
+        background: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+      }}
+    >
+      <div className="card shadow-lg text-center p-4" style={{ maxWidth: "400px" }}>
+        <i className="bi bi-exclamation-circle-fill text-danger fs-1 mb-3"></i>
+        <h3 className="fw-bold mb-2">Oops!</h3>
+        <p className="text-muted mb-3">
+          Course not found or it may have been removed.
+        </p>
+        <Link to="/" className="btn btn-primary">
+          Back to Home
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 
   // Skills by category
   const skillsMap = {

@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState, useContext } from "react";
 import axios from "axios";
 const AuthContext = createContext();
 const backenedURL = "http://localhost:3002";
@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
         email,
         password,
       });
+      console.log(data);
       setUser(data);
       localStorage.setItem("user", JSON.stringify(data)); // save user to local storage
     } catch (error) {
@@ -25,7 +26,9 @@ const AuthProvider = ({ children }) => {
     localStorage.removeItem("user"); // remove user from local storage
   };
 
-  return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={{login, logout, user}}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);
+
+export default AuthProvider;
