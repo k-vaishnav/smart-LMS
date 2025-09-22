@@ -1,9 +1,21 @@
 import Course from "../models/CourseModel.js"
 const getCourse = async (req,res) =>{
+    const {keyword,category} = req.query;
+    console.log(keyword,category);
+    // title filter
+    const titleFFilter = keyword ? {title:{$regex: keyword,$options:"i"}}:{};
+
+    // category Filter
+    const categoryFilter = category ?{category} : {};
+    
     try{
         // fetch the courses from the database
-        const coures = await Course.find({})
-        .populate("category",'name')
+        const coures = await Course.find({...titleFFilter})
+        .populate({
+            path:"category",
+            select:"name",
+            match:category?{name:category}:{},
+        })
         .populate("instructor",'name email');
         res.status(200).json(coures);
     }

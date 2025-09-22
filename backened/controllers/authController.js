@@ -43,6 +43,7 @@ export const registerUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
   const { email, password } = req.body;
+
   try {
     const user = await User.findOne({ email });
     if (!user) {
@@ -67,7 +68,7 @@ export const loginUser = async (req, res) => {
           console.log(err);
           throw new Error(err);
         }
-        return res.status(200).json({ token });
+        return res.status(200).json({ token,name:user.name });
       }
     );
   } catch (error) {
