@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import Login from './pages/Login'
 import Register from './pages/Register.jsx'
 import CourseDetails from './pages/CourseDetails.jsx'
+import Courses from './pages/courses.jsx'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path= "/courses/:courseid" element={<CourseDetails />} />
-        <Route path="/courses" element={<h1 className="text-center mt-5">Courses Page</h1>} />
+        <Route path="/courses" element={<Courses/>} />
       </Routes>
       <Footer />
     </div>

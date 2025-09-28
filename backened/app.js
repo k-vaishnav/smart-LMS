@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes); // goes to authRoute
 app.use("/api/courses", courseRoutes); // goes to courseRoute
 app.use("/api/category", categoryRoutes); // goes to categoryRoute
-
+app.use("/api/payment", paymentRoutes); // goes to paymentRoute
 if (process.env.NODE_ENV === "dev") {
   app.use(morgan("dev"));
 }
