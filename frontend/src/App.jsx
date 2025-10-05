@@ -3,7 +3,12 @@ import Navbar from './components/layout/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login'
 import Register from './pages/Register.jsx'
+import CourseDetails from './pages/CourseDetails.jsx'
+import Courses from './pages/courses.jsx'
 import { Routes, Route } from 'react-router-dom'
+import PrivateRoute from './components/PrivateRoute.jsx'
+import LearningPage from './pages/LearningPage.jsx'
+
 
 function App() {
   return (
@@ -13,7 +18,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/courses" element={<h1 className="text-center mt-5">Courses Page</h1>} />
+        <Route path= "/courses/:courseid" element={<CourseDetails />} />
+        <Route path="/courses" element={<Courses/>} />
+        <Route element = {<PrivateRoute/>} >
+          <Route path= "/learning" element={<LearningPage />} />
+          <Route path= "/learn/courses/:courseId" element={<LessonPlayerPage />} />
+        </Route>
       </Routes>
       <Footer />
     </div>

@@ -70,9 +70,8 @@ const enrollStudentInCourse = async (req, res) => {
 const myCourses = async (req,res) =>{
 // get my courses
 try{
-    const courses = await Course.find({ enrolledStudents: req.user.id }).then((courses) => {
-        return res.status(200).json(courses);
-    });
+    const courses = await Course.find({ enrolledStudents: req.user.id });
+    res.status(200).json(courses);
 }
 catch(error){
     return res.status(500).json({ message: "Server error!" });
