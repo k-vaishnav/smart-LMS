@@ -1,0 +1,17 @@
+.category-item {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: #000;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #e8e8e8dd;
+}
+
+.category-item.active {
+    background-color: #cceaff;
+    
+}

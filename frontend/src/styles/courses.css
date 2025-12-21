@@ -1,0 +1,13 @@
+.no-courses-box {
+  background: #f8f9fa;
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  padding: 40px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  /* max-width: 400px; */
+  margin: 0 auto;
+}
+
+.no-courses-box .emoji {
+  font-size: 48px;
+}
