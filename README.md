@@ -104,19 +104,19 @@ Smart-LMS/
 git clone https://github.com/k-vaishnav/Smart-LMS.git
 ```
 ## 2️⃣ Backend Setup
-cd backend
-npm install
-npm run start:dev
+- cd backend
+- npm install
+- npm run start:dev
 
 # Create a .env file:
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_secret
-STRIPE_SECRET_KEY=your_stripe_key
+- MONGO_URI=your_mongo_uri
+- JWT_SECRET=your_secret
+- STRIPE_SECRET_KEY=your_stripe_key
 
 ## 3️⃣ Frontend Setup
-cd frontend
-npm install
-npm run dev
+- cd frontend
+- npm install
+- npm run dev
 
 ## 📸 Screenshots
 *(Add UI screenshots here)*
