@@ -119,7 +119,19 @@ git clone https://github.com/k-vaishnav/Smart-LMS.git
 - npm run dev
 
 ## 📸 Screenshots
-*(Add UI screenshots here)*
+
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
+
+### 📚 Courses Page
+![Courses](screenshots/courses.png)
+
+### 💳 Checkout Page
+![Checkout](screenshots/checkout.png)
+
+### Orders Page
+![Orders](screenshots/orders.png)
+
 
 ## 📌 Resume Highlights
 
