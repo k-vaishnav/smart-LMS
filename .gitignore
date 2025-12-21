@@ -1,5 +1,5 @@
 backened/node_modules/
 backened/.env
-
+backened/uploads
 frontend/node_modules/
 frontend/.env
